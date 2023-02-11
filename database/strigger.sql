@@ -269,7 +269,7 @@ begin
 	insert into Promotion values (@id,@voucher_code,@desc,@quantity,@create_at,@voucher_percent)
 end
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-create trigger createUser
+create trigger tg_createUser
 on [User]
 instead of insert
 as

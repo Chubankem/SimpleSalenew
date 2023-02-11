@@ -147,4 +147,35 @@ begin
 	delete from Cart_item where id=@id
 	exec updateTotalPrice @cart_id
 end
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+alter procedure createUser
+	@username varchar(255),
+	@password varchar(255),
+            @first_name varchar(255),
+            @last_name varchar(255),
+            @telephone int,
+            @email varchar(255),
+            @gender bit
+			as
+			begin
+				begin tran
+					begin try
+
+						if (exists(select * from [User] where username=@username))
+							begin
+								exec sendError 1,'Username already existed!' 
+								RAISERROR('!',16,1)
+							end
+
+						insert into [User] values(1,@username,@password,@first_name,@last_name,@telephone,@email,@gender)
+							exec sendError 0,'Create new user success!'
+						commit 
+
+					end try
+					begin catch
+							rollback 
+					end catch
+			end
+
+			exec createUser 'test4','123456','asd','zxc','452345','what','0'
+------------------------------------------------------

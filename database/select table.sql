@@ -17,4 +17,15 @@ begin
         ,ERROR_PROCEDURE() AS ErrorProcedure  
         ,ERROR_MESSAGE() AS ErrorMessage;  
 end
+
+create procedure sendError
+	@errCode int,
+	@message varchar(255)
+as
+begin
+	select 
+		@errCode as errCode,
+		@message as [message]
+end
+exec sendError 1,'text'
 --findIDForDefaultCreate-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Create user</title>
+</head>
+
+<body>
+   <h1>Create user</h1>
+   <form action="/post_createuser" method="post">
+      <label>Username:</label><br>
+      <input type="text" name="username"><br>
+      <label>Password:</label><br>
+      <input type="text" name="password"><br>
+      <label>First name:</label><br>
+      <input type="text" name="first_name"><br>
+      <label>Last name:</label><br>
+      <input type="text" name="last_name"><br>
+      <label>Telephone:</label><br>
+      <input type="text" name="telephone"><br>
+      <label>Email:</label><br>
+      <input type="text" name="email"><br>
+      <label>Gender:</label><br>
+      <select name="gender">
+         <option value="1">Male</option>
+         <option value="0">Female</option>
+      </select><br><br>
+      <input type="submit" value="Submit">
+   </form>
+
+</body>
+
+</html>

@@ -1,11 +1,11 @@
-import db from "../models/index"
-
 let getHomePage = async (req, res) => {
-    let data = await db.Product.findAll();
-    console.log(data);
     return res.render('homepage.ejs');
 }
 
+let getAboutPage = (req, res) => {
+    return res.render('aboutpage.ejs');
+}
 module.exports = {
-    getHomePage: getHomePage
+    getHomePage: getHomePage,
+    getAboutPage: getAboutPage
 }
